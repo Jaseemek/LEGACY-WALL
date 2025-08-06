@@ -341,21 +341,12 @@ body {
   margin-top: 0.5rem;
   text-shadow: 0 0 6px #30FFF4bb;
 }
-/* Align Back to Home link to the left */
-nav.top-nav.back-home-nav {
-  justify-content: flex-start;
-  padding-left: 2rem; /* Align with other nav padding */
+/* Only affect the back-home nav */
+nav.back-home-nav {
+  justify-content: flex-start !important;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
-
-.back-home {
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  text-shadow: 0 0 5px #30FFF4aa, 0 0 10px #30FFF466;
-  transition: color 0.3s ease;
-}
-
-.back-home:hover {
-  color: #1de9ff;
-  text-shadow: 0 0 12px #30FFF4dd, 0 0 24px #1defffcc;
+nav.back-home-nav .back-home {
+  margin-left: 0 !important;
 }

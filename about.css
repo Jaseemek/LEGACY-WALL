@@ -1,0 +1,557 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base and body */
+body {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 2rem;
+  background: #101a20;     /* Deep dark teal background */
+  color: #EAFDFD;          /* Soft white-teal text */
+  overflow-x: hidden;
+}
+
+/* Neon Aura Background Glow */
+body::before {
+  content: "";
+  position: fixed;
+  top: -30vh;
+  left: -20vw;
+  width: 140vw;
+  height: 140vh;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 105% 60%, 
+    #30FFF4cc 0%, 
+    #101a20 55%, 
+    transparent 100%
+  );
+  opacity: 0.45;
+  filter: blur(26px);
+  animation: neonAura 9s ease-in-out infinite alternate;
+}
+@keyframes neonAura {
+  0% { opacity: 0.45; filter: blur(18px);}
+  100% { opacity: 0.45; filter: blur(34px);}
+}
+
+/* Top Navigation */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #101a20;
+  padding: 1rem 2rem;
+  z-index: 10;
+}
+.top-nav .logo img {
+  height: 80px;
+  transition: transform 0.3s ease;
+}
+.top-nav .logo img:hover {
+  transform: scale(1.1);
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+}
+.nav-links a:hover {
+  color: #1de9ff;
+  background-color: transparent;
+  text-shadow: 0 0 10px #30FFF4;
+}
+.nav-links a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #30FFF4;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+.nav-links a.active {
+  color: #30FFF4;
+}
+
+/* Navigation “Back to Home” bar */
+nav.top-nav + nav.top-nav {
+  justify-content: flex-start;
+  padding-left: 2rem;
+  background: #101a20;
+}
+nav.top-nav + nav.top-nav a.back-home {
+  color: #30FFF4;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+nav.top-nav + nav.top-nav a.back-home:hover {
+  color: #1de9ff;
+  text-shadow: 0 0 10px #30FFF4;
+}
+
+/* Navigation note paragraph */
+.nav-note {
+  font-size: 1rem;
+  color: #A0C7C5; /* lighter teal-gray for soft contrast */
+  text-align: center;
+  max-width: 700px;
+  margin: 1.5rem auto 2rem;
+  line-height: 1.6;
+}
+.nav-note strong {
+  color: #30FFF4; /* neon teal accent */
+}
+
+/* Tree container */
+.tree-container {
+  text-align: center;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Heading with typing effect */
+.tree-heading {
+  color: #fff;              /* Change font color to pure white */
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+   font-family: 'Poppins', sans-serif;
+}
+
+/* Subheading */
+.tree-subheading {
+  color: #8ACFD1; /* soft teal-gray */
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+/* The tree container layout */
+.tree {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  position: relative;
+}
+
+/* Branches */
+.branches {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  flex: 1;
+}
+
+/* Branch cards */
+.branch {
+  background: #13232F; /* dark panel with teal tinted black */
+  border-left: 3px solid #30FFF4; /* neon teal border */
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  position: relative;
+  text-align: left;
+  color: #9ADCDB; /* soft tealish text */
+  font-size: 0.95rem;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+/* Emojis on branch */
+.branch span {
+  margin-right: 8px;
+  font-size: 1.4rem;
+  vertical-align: middle;
+}
+
+/* Hover effect on branch */
+.branch:hover {
+  transform: translateX(5px);
+  border-color: #30FFF4;
+  color: #EAFDFD;
+  box-shadow: 0 0 12px #30FFF4;
+}
+
+/* Center node in middle */
+.center-node {
+  background: transparent;
+  color: #EAFDFD;
+  font-weight: 600;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  transition: 0.3s ease;
+  font-size: 1rem;
+  max-width: 280px;
+  margin: auto;
+  line-height: 1.6;
+}
+.center-node:hover {
+  border-color: #30FFF4;
+  box-shadow: 0 0 15px #30FFF4;
+  transform: scale(1.03);
+}
+
+/* Typing heading */
+#typing-heading {
+  color: #30FFF4;
+  font-weight: 700;
+  font-size: 2rem;
+  white-space: pre;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: default;
+}
+#typing-heading:hover {
+  color: #1de9ff;
+  text-shadow: 0 0 12px #30FFF4;
+  transform: scale(1.03);
+}
+
+/* Responsive adjustments for tree layout */
+@media (max-width: 768px) {
+  .tree {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .branches {
+    align-items: center;
+  }
+  .branch {
+    text-align: center;
+    border-left: none;
+    border-top: 3px solid #30FFF4;
+    border-radius: 12px;
+    padding: 1rem 2rem;
+  }
+}
+
+/* Smooth hover scale effect for logo */
+.logo img {
+  height: 90px;
+  width: auto;
+  transition: transform 0.3s ease;
+  outline: none;
+  box-shadow: none;
+}
+.logo img:hover,
+.logo img:focus {
+  transform: scale(1.1);
+}
+
+/* Accessibility fixes for links */
+.logo a,
+.logo img {
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Link styling consistency */
+.top-nav a,
+.nav-links a {
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+/* Prevent input and textarea horizontal overflow */
+.form-input,
+input,
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+}
+.tree-heading,
+#typing-heading {
+  color: #fff !important;
+}
+/* Use a soft off-white, e.g., #F3F7FF or #F0F0F0 for a slightly dimmed white */
+.nav-note,
+.tree-container,
+.tree-heading,
+#typing-heading,
+.tree-subheading {
+  color: #F3F7FF; /* You can tweak: #EAFDFD, #F0F0F0, or #E4E4E7 for slightly different warmth/coolness */
+}
+.btn-primary {
+  background-color: #30FFF4;
+  color: #101a20;
+  font-weight: 700;
+  border-radius: 999px;
+  box-shadow: 0 0 18px #30FFF4, 0 0 35px #1de9ff;
+  transition: box-shadow 0.3s, transform 0.3s;
+  padding: 0.9em 2em;
+  display: inline-block;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  box-shadow: 0 0 30px #30FFF4, 0 0 50px #1de9ff;
+  transform: scale(1.05);
+}
+.typing-text {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #EAFDFD;
+  white-space: nowrap;
+  border-right: 3px solid #30FFF4; /* blinking cursor */
+  animation: blinkCursor 0.95s steps(2, start) infinite;
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+@keyframes blinkCursor {
+  from { border-right-color: #30FFF4; }
+  to   { border-right-color: transparent; }
+}
+.typing-text {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #EAFDFD;
+  white-space: nowrap;
+  border-right: 3px solid #30FFF4; /* blinking cursor */
+  animation: blinkCursor 0.95s steps(2, start) infinite;
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+@keyframes blinkCursor {
+  from { border-right-color: #30FFF4; }
+  to   { border-right-color: transparent; }
+}
+.belong-cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 38vh;         /* generous vertical space, tweak as needed */
+  margin-top: 8rem;         /* large gap from above content */
+  margin-bottom: 3rem;
+}
+
+.belong-cta {
+  max-width: 600px;
+  width: 90vw;
+  text-align: center;
+}
+
+.typing-text {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #EAFDFD;
+  line-height: 1.5;
+  background: transparent;
+  white-space: pre-line; /* preserves breaks created by \n in JS */
+  border-right: 3px solid #30FFF4;
+  animation: blinkCursor 0.95s steps(2, start) infinite;
+  margin: 0 auto;
+}
+
+@keyframes blinkCursor {
+  from { border-right-color: #30FFF4; }
+  to   { border-right-color: transparent; }
+}
+.typing-text {
+  border-right: none;
+  animation: none;
+  /* keep other styles as is */
+}
+.typing-text {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #EAFDFD;
+  white-space: pre-line;
+  border-right: none; /* Make sure blinking cursor removed */
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+  cursor: default; /* optional */
+}
+
+.typing-text:hover {
+  text-shadow: 
+    0 0 6px #30FFF4aa,  /* subtle neon teal glow */
+    0 0 12px #1de9ff99;
+  color: #d0fbfc; /* Slightly lighter color on hover, optional */
+}
+
+.typing-text {
+  padding: 0.5em 1em;
+  /* other styles */
+}
+.btn-primary {
+  background-color: #30FFF4;
+  color: #101a20;
+  font-weight: 700;
+  border-radius: 999px;
+  box-shadow: 0 0 18px #30FFF4, 0 0 35px #1de9ff;
+  transition: box-shadow 0.3s, transform 0.3s;
+  padding: 0.9em 2em;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  box-shadow: 0 0 30px #30FFF4, 0 0 50px #1de9ff;
+  transform: scale(1.05);
+}
+.btn-primary {
+  background-color: #101a20;
+  color: #fff ;
+  font-weight: 700;
+  border-radius: 999px;
+  box-shadow: 0 0 18px #30FFF4, 0 0 35px #1de9ff;
+  transition: box-shadow 0.3s, transform 0.3s;
+  padding: 0.9em 2em;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  box-shadow: 0 0 30px #30FFF4, 0 0 50px #1de9ff;
+  transform: scale(1.05);
+}
+.belong-cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 38vh;
+  margin-top: 8rem;
+  margin-bottom: 3rem;
+}
+
+.belong-cta {
+  max-width: 600px;
+  width: 90vw;
+  text-align: center;
+}
+
+
+
+.silent-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 26, 32, 0.42);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: modalFadeIn 0.25s;
+}
+
+@keyframes modalFadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.silent-modal-box {
+  background: #16232f;
+  color: #eafdfd;
+  border-radius: 18px;
+  box-shadow: 0 0 32px #30FFF4, 0 0 48px #1defff88;
+  border: 1.8px solid #30FFF4;
+  padding: 1.8em 2.4em;
+  max-width: 520px;
+  width: 90vw;
+  max-height: 70vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.2em;
+  color: #30FFF4;
+}
+
+.silent-service-list {
+  list-style: disc inside;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  padding-left: 1em;
+}
+
+.silent-service-list li {
+  margin-bottom: 0.6em;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #eafdfd;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.25s;
+}
+
+.modal-close-btn:hover {
+  color: #30FFF4;
+}
+.silent-modal-box {
+  /* ...your existing styles... */
+  animation: floatUpDown 3.5s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .tree-container, .belong-cta-wrapper {
+    padding: 1rem 1.5rem;
+  }
+  .silent-modal-box {
+    width: 95vw;
+    padding: 1.5em 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  body, .silent-service-list li {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .silent-modal-box {
+    padding: 1rem 1.2rem;
+  }
+  .nav-links a {
+    font-size: 1rem;
+  }
+}
+

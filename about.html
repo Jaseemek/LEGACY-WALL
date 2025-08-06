@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Yourself – Silent Equity</title>
+  <link rel="stylesheet" href="about.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<!-- Navigation -->
+<!-- Put this inside <body> at top of each page -->
+<nav class="top-nav">
+  <div class="logo">
+    <a href="index.html">
+      <img src="https://iili.io/Fuk32pf.png" alt="Silent Equity Logo" />
+    </a>
+  </div>
+ <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Yourself</a>
+   <a href="silent-potential.html">Silent potential</a>
+  
+  </div>
+</nav>
+
+<nav class="top-nav">
+  <a href="index.html" class="back-home">← Back to Home</a>
+</nav>
+  <header class="top-bar">
+  
+</header>
+<body>
+  <p class="nav-note">
+  We chose to call this section <strong>"About Yourself"</strong> instead of the usual "About Us" — because your current journey mirrors the one we’ve already walked through. This is not just our story; it's yours too.
+</p>
+
+<section class="tree-container">
+<h2 class="tree-heading"><span id="typing-heading"></span></h2>
+  <p class="tree-subheading">We created the points below to see if we're the right fit for you.</p>
+
+  <div class="tree">
+    <div class="branches left">
+      <div class="branch"><span></span> Your Strategy works on backtest, but fails live.</div>
+      <div class="branch"><span></span> You're trading to avoid loss, not to win.</div>
+      <div class="branch"><span></span> You Don’t know when to start live trading.</div>
+      <div class="branch"><span></span> You are repeating same mistakes, again and again.</div>
+    </div>
+
+    <div class="center-node">
+       If even 2 of these sound familiar,<br> you belong with us.
+    </div>
+
+    <div class="branches right">
+      <div class="branch"><span></span> You have no clue what returns are realistically possible.</div>
+      <div class="branch"><span></span> You Panic when trade turns red.</div>
+      <div class="branch"><span></span> You been Chasing “perfect consistency” which is killing you.</div>
+      <div class="branch"><span></span> You got tired of fake traders and fake results online.</div>
+    </div>
+  </div>
+</section>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const text = "Not Any Another Mentor. We Were Where You Are.";
+    const target = document.getElementById("typing-heading");
+    let index = 0;
+
+    function typeLetter() {
+      if (index < text.length) {
+        target.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeLetter, 100); // 100ms per letter
+      }
+    }
+
+    typeLetter();
+  });
+</script>
+<div class="belong-cta-wrapper">
+  <div class="belong-cta">
+    <h3 id="ctaTypingText" class="typing-text"></h3>
+  <a id="activateSilentBtn" href="#" class="btn-primary cta-button" style="display:none; margin-top:2rem;">
+  Activate Your Silent Potential
+</a>
+
+  </div>
+</div>
+<div id="silentModal" class="silent-modal-backdrop" style="display:none;">
+  <div class="silent-modal-box">
+    <button id="closeSilentModal" class="modal-close-btn" aria-label="Close">&times;</button>
+    <h2 class="modal-title">Code Of Consistency</h2>
+    <ul class="silent-service-list">
+      <li>Access to the complete “Silent Potential” system</li>
+      <li>Advanced trader mindset reprogramming</li>
+      <li>Realistic performance frameworks for sustainable success</li>
+      <li>Step-by-step capital growth blueprint</li>
+      <li>Data-driven, algorithmic milestones for live trading readiness</li>
+      <li>Downloadable PDF and video training materials</li>
+      <li>Interactive Q&amp;A sessions</li>
+      <li>Exclusive webinars and workshops on essential topics</li>
+      <li>Real-time trade guidance</li>
+      <li>Comprehensive journal templates with monthly expert review</li>
+      <li>Premium VIP Discord community access</li>
+    </ul>
+  </div>
+</div>
+ <script src="about.js"></script>
+
+</body>
+</html>

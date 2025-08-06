@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Silent Equity</title>
+<link rel="stylesheet" href="index.css" />
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Optional Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome for social icons if used -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
+</head>
+<body>
+  
+  <!-- Warning Modal Here -->
+  <div id="entryWarningModal" class="entry-modal-backdrop">
+    <div class="entry-modal-box">
+      <dotlottie-wc
+        src="https://lottie.host/553ee569-232c-4958-8418-00a956e4c277/5vY1Vtnh8h.lottie"
+        style="width: 200px; height: 200px; margin-bottom: 24px;"
+        speed="1"
+        autoplay
+        loop>
+      </dotlottie-wc>
+      <h2>Read This First</h2>
+      <p class="warning-message">
+        Have you lost capital or been misled by so-called trading “gurus”?<br>
+        You’re not alone.<br>
+        <br>
+        <b>Welcome to Silent Equity:</b><br>
+        Where discipline, real strategy, and honest support help you reclaim confidence and control—no hype, no empty promises.
+      </p>
+      <button id="closeEntryModalBtn" class="modal-close-btn">Continue</button>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="nav-container">
+      <nav class="top-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Yourself</a>
+        <a href="silent-potential.html">Silent potential</a>
+    
+      </nav>
+    </div>
+  </header>
+
+  <!-- Market Ticker -->
+  <div class="market-ticker">
+    <div id="marketTickerContent" class="scrolling-text"></div>
+  </div>
+
+  <!-- HERO -->
+  <img src="https://iili.io/Fuk32pf.png" alt="Silent Equity Logo" class="absolute top-6 left-6 w-16 md:w-20 opacity-90" />
+  <section class="hero text-white text-center">
+  <!-- Ninja image clickable for scrolling to Reviews -->
+  <img
+    src="https://iili.io/FPexvZF.png"
+    alt="Ninja Icon"
+    class="ninja-emoji cursor-pointer hover:scale-110 transition-transform duration-300 mb-4"
+    style="display: block; margin-left: auto; margin-right: auto; width: 96px; height: 96px;"
+    tabindex="0"
+    role="button"
+    aria-label="Go to Reviews & FAQs"
+  />
+  <h1 class="text-4xl md:text-6xl font-bold mb-4 glowing-title">Silent Equity</h1>
+  <p class="text-lg md:text-xl max-w-2xl mx-auto">
+    <span id="typingText" class="whitespace-nowrap text-white font-semibold"></span>
+    <span class="blinking-cursor">|</span>
+  </p>
+</section>
+
+  <!-- Begin scroll-snap container -->
+  <div class="snap-container">
+    <!-- Welcome Section -->
+    <section class="welcome-silent-equity" id="welcomeEquity">
+      <div class="welcome-left">
+        <h2 class="welcome-heading">
+          Welcome To<br />
+          <span class="gold-accent">Silent</span> Equity
+        </h2>
+      </div>
+      <div class="welcome-right">
+        <div class="about-desc">
+          <p>
+            Silent Equity is a collective of three experienced traders united by one vision — to build a new generation of disciplined,
+            consistent, and emotionally resilient market participants.
+          </p>
+          <p>
+            We choose to stay anonymous, not because we seek secrecy, but because we believe your focus should be on
+            <strong>process, progress, and personal mastery</strong> — not personalities. In an age where most chase faces, we shift your
+            attention to <strong>data, discipline, and development</strong>.
+          </p>
+          <p>
+            We don’t sell shortcuts.<br />
+            We don’t glorify overnight success.<br />
+            We guide you to see trading as it is — a craft, a journey, and a mirror of your mind.
+          </p>
+          <p class="about-tagline">
+            Silent Equity isn’t about us.<br />
+            <strong>It’s about what you become in silence.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Movement Section -->
+    <section class="join-movement-section">
+      <div class="join-left">
+        <h2 class="join-heading">
+          Join<br />
+          the <span class="gold-accent">Movement</span>
+        </h2>
+      </div>
+      <div class="join-right">
+        <div class="join-desc">
+          <p>
+            At Silent Equity, we conduct regular trade challenges within our community to push students beyond their comfort zones and
+            strengthen their execution under real conditions. These challenges are designed to simulate live trading pressure, develop
+            discipline, and track performance with clear metrics.
+          </p>
+          <p>
+            Alongside this, we implement a habit-building and routine system that focuses on daily consistency, emotional control, and
+            structured planning—essential traits of a profitable trader. Combined with our proven, risk-managed strategies, students don’t just
+            learn to trade—they evolve into traders.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Anonymity Section -->
+    <section class="team-anonymity-section">
+      <div class="team-left">
+        <h2 class="ninja-label">
+          The <span class="gold-accent">Ninjas</span>
+        </h2>
+      </div>
+      <div class="team-right">
+        <div class="team-desc">
+          <p>
+            Our team at Silent Equity consists of three passionate full-time traders who choose to remain anonymous. This isn’t about secrecy—it’s about
+            shifting the focus entirely onto the craft of trading. We believe that personalities and faces shouldn’t distract from the real goal:
+            mastering the process. Our anonymity allows us to lead by example, proving that consistent discipline, not individual fame, is what builds real trading success.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section class="journey-section" id="journeySection">
+      <div class="journey-left">
+        <h2 class="journey-heading">
+          The Story of<br />
+          <span class="gold-accent">Our Journey</span>
+        </h2>
+      </div>
+      <div class="journey-right">
+        <div class="journey-desc">
+          <p>
+            We are Silent Equity.<br />
+            Three traders forged in the fire of failure, shaped by two relentless years of non-profitability. No shortcuts. No hype. Just brutal lessons,
+            sleepless nights, and the silent grind that led us to our edge.
+          </p>
+          <p>
+            We stay anonymous—not to hide, but to shift the spotlight from ego to process. Trading isn’t about faces or fame. It’s about discipline,
+            psychology, and precision.
+          </p>
+          <p>
+            While others sell dreams, we expose truth.<br />
+            While others make noise, we make impact.
+          </p>
+          <p class="journey-tagline">
+            Welcome to Silent Equity—<br />
+            <strong>Where the myth ends, and real trading begins.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- End scroll-snap container -->
+
+  <!-- Contact Section -->
+  <section class="contact text-white text-center" id="contact">
+    <div class="contact-slide-wrapper">
+      <div class="light-trail"></div>
+      <div class="contact-form-content">
+        <h2 class="text-4xl font-bold mb-4">Get in Touch</h2>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="max-w-xl mx-auto flex flex-col gap-4">
+          <input type="text" name="name" placeholder="Your Name" required class="form-input text-black" />
+          <input type="email" name="email" placeholder="Your Email" required class="form-input text-black" />
+          <textarea name="message" placeholder="Your Message" required class="form-input h-32 text-black"></textarea>
+          <button type="submit" class="btn-white btn-hover">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Connect Section -->
+  <section class="connect text-white text-center">
+    <h2 class="text-3xl font-bold mb-6">Connect with Us</h2>
+    <p class="mb-3">
+      Email:
+      <a href="mailto:unmasksuccess@gmail.com" class="underline hover:text-gray-300">unmasksuccess@gmail.com</a>
+    </p>
+    <div class="flex justify-center space-x-6 text-3xl mt-4">
+      <a href="https://www.instagram.com/thesilentequity" target="_blank" class="social-icon" title="Instagram" data-sound><i class="fab fa-instagram"></i></a>
+      <a href="https://discord.gg/7v6zaGRU9D" target="_blank" class="social-icon" title="Discord" data-sound><i class="fab fa-discord"></i></a>
+      <a href="https://t.me/silentequity" target="_blank" class="social-icon" title="Telegram" data-sound><i class="fab fa-telegram"></i></a>
+      <a href="https://kick.com/silentequity" target="_blank" class="social-icon" title="Kick" data-sound><i class="fas fa-bolt"></i></a>
+      <a href="https://www.linkedin.com/company/silent-equity" target="_blank" class="social-icon" title="LinkedIn" data-sound><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p class="mt-6">
+      <a href="#reviewsButton" class="btn-white btn-hover review-btn" id="reviewsButton">🌟 View Reviews & FAQs</a>
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer text-center text-gray-400 text-sm">
+    <img src="https://iili.io/Fuk32pf.png" alt="Silent Equity Logo" class="mx-auto mb-2 w-10 opacity-70" />
+    <p>Silent Equity © 2025 — Rise in Silence</p>
+  </footer>
+
+  <!-- Sound and main JS -->
+  <audio id="clickSound" src="sounds/click.mp3" preload="auto"></audio>
+  <audio id="hoverSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3" preload="auto"></audio>
+
+  <script src="index.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+  
+  <script>
+  // Modal control script
+  document.addEventListener("DOMContentLoaded", function(){
+    var modal = document.getElementById('entryWarningModal');
+    var btn = document.getElementById('closeEntryModalBtn');
+    btn.addEventListener("click", function() {
+      modal.style.opacity = "0";
+      setTimeout(function(){ modal.style.display="none"; }, 400);
+      document.body.style.overflow = ""; // allow scroll after close
+    });
+    // Lock scrolling while modal is open
+    document.body.style.overflow = "hidden";
+  });
+  </script>
+  
+  <script>
+  // Contact slide-in animation on intersection
+  document.addEventListener("DOMContentLoaded", function () {
+    const wrapper = document.querySelector('.contact-slide-wrapper');
+    if (!wrapper) return;
+    let animated = false;
+    const observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !animated) {
+        wrapper.classList.add('slide-in');
+        animated = true;
+        observer.disconnect();
+      }
+    }, { threshold: 0.35 });
+    observer.observe(wrapper);
+  });
+  </script>
+
+  <script>
+  // Journey section animation trigger
+  document.addEventListener("DOMContentLoaded", function() {
+    const journey = document.getElementById('journeySection');
+    let alreadyShown = false;
+    const observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !alreadyShown) {
+        journey.classList.add('visible');
+        alreadyShown = true;
+      }
+    }, { threshold: 0.3 });
+    observer.observe(journey);
+  });
+  </script>
+
+  <script>
+  // Ninja emoji click scroll-to-Reviews button
+  document.addEventListener("DOMContentLoaded", () => {
+    const ninja = document.querySelector(".ninja-emoji");
+    const reviewsBtn = document.getElementById("reviewsButton");
+
+    if (ninja && reviewsBtn) {
+      ninja.style.cursor = "pointer";
+      ninja.setAttribute('tabindex', '0');  // keyboard focusable
+
+      ninja.addEventListener("click", () => {
+        reviewsBtn.scrollIntoView({ behavior: "smooth", block: "center" });
+        reviewsBtn.focus({ preventScroll: true });
+      });
+
+      ninja.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          reviewsBtn.scrollIntoView({ behavior: "smooth", block: "center" });
+          reviewsBtn.focus({ preventScroll: true });
+        }
+      });
+    }
+  });
+  </script>
+
+</body>
+</html>

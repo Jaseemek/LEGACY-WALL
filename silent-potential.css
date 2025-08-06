@@ -1,0 +1,343 @@
+ /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base and body */
+body {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 1rem 2rem;
+  background: #101a20;    /* Neon teal dark background */
+  color: #EAFDFD;         /* Soft white-teal text */
+  overflow-x: hidden;
+}
+
+/* Neon Aura Background Glow */
+body::before {
+  content: "";
+  position: fixed;
+  top: -30vh;
+  left: -20vw;
+  width: 140vw;
+  height: 140vh;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 105% 60%, #30FFF4cc 0%, #101a20 55%, transparent 100%);
+  opacity: 0.45;
+  filter: blur(26px);
+  animation: neonAura 9s ease-in-out infinite alternate;
+}
+@keyframes neonAura {
+  0% { opacity: 0.45; filter: blur(18px);}
+  100% { opacity: 0.45; filter: blur(34px);}
+}
+
+/* Navigation */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #101a20;
+  padding: 1rem 2rem;
+  z-index: 10;
+}
+.logo img {
+  height: 80px;
+  transition: transform 0.3s ease;
+}
+.logo img:hover,
+.logo img:focus {
+  transform: scale(1.1);
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+}
+.nav-links a:hover {
+  color: #1de9ff;
+  background-color: transparent;
+  text-shadow: 0 0 10px #30FFF4;
+}
+.nav-links a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #30FFF4;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+.nav-links a.active {
+  color: #30FFF4;
+}
+
+/* Back to Home Link */
+.back-home-top {
+  text-align: left;
+  padding: 1rem 2rem 0;
+margin-bottom: 40px; /* Add this or increase if it already exists */
+}
+.back-home-top a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.back-home-top a:hover {
+  color: #1de9ff;
+  text-shadow: 0 0 8px #30FFF4;
+}
+/* ==== Silent Potential Page Specific ==== */
+
+/* Base and body */
+body {
+  background: #101a20;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  margin: 10;
+  padding: 5;
+}
+
+/* HEADER and Navigation */
+.header {
+  background: #101a20;
+  padding: 1rem 2rem;
+}
+.top-nav {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end;
+}
+.top-nav a {
+  color: #EAFDFD;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem;
+  position: relative;
+  transition: color 0.3s;
+}
+.top-nav a.active {
+  color: #30FFF4;
+}
+.top-nav a.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #30FFF4;
+  border-radius: 2px;
+  position: absolute;
+  left: 0; bottom: 0;
+}
+
+/* Hero Section */
+.hero {
+  background: #101a20;
+  text-align: center;
+  padding: 5rem 1rem 1.5rem 1rem;
+}
+.glowing-title {
+  color: #30FFF4;
+  text-shadow: 0 0 8px #30FFF4bb, 0 0 16px #1defff88;
+  animation: glowTitle 3s infinite alternate;
+  font-size: 7.8rem;
+  font-weight: bold;
+  margin-bottom: 1.3rem;
+}
+@keyframes glowTitle {
+  from { text-shadow: 0 0 4px #30FFF4bb; }
+  to { text-shadow: 0 0 14px #30FFF4cc; }
+}
+
+/* Content Box */
+.content-section {
+  background: linear-gradient(90deg, #13232f 70%, #101a20 100%);
+  border: 1.5px solid #30FFF4;
+  border-radius: 18px;
+ margin-top: 40px;
+  margin: 0 auto 3rem auto;
+  max-width: 740px;           /* Narrow horizontally */
+  min-height: 390px;          /* Taller vertically */
+  padding: 32px 18px;
+  color: #ffffff;             /* Pure white text */
+  font-size: 1.05rem;
+  line-height: 1.7;
+  box-shadow: 0 6px 28px rgba(23,145,145, 0.13);
+  display: flex;
+  flex-direction: column;
+  gap: 1.3em;
+}
+
+/* Highlighted course name */
+.highlighted {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.76em;
+  text-shadow: 0 0 7px , 0 0 15px #ff;
+  letter-spacing: -0.5px;
+  margin-bottom: 1.2em;
+  display: block;
+}
+
+/* Paragraphs inside content section */
+.content-section p {
+  color: #fff;      /* Ensure pure white text */
+  margin: 0;
+}
+
+/* Responsive: box grows vertically and fits mobile */
+@media (max-width: 700px) {
+  .content-section {
+    max-width: 97vw;
+    min-height: 56vw;
+    padding: 20px 7vw;
+    font-size: 1rem;
+  }
+  .glowing-title { font-size: 2rem; }
+}
+/* Make all text inside the content section pure white */
+.content-section, 
+.content-section p,
+.hero p {
+  color: #ffffff !important;
+}
+
+/* Keep the highlighted course name neon as needed */
+.highlighted {
+  color: #30FFF4; /* neon cyan highlight as desired */
+}
+.course-details {
+  max-width: 700px;
+  margin: 2rem auto 4rem auto;
+  padding: 0 1rem;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.7;
+}
+
+.course-section {
+  margin-bottom: 3.5rem;
+}
+
+.section-title {
+  font-size: 1.9rem;
+  color: #30FFF4;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 0 10px #30FFF4aa, 0 0 18px #;
+  letter-spacing: -0.6px;
+}
+
+/* Lists */
+.course-section ul {
+  list-style-type: disc;
+  margin-left: 1.8rem;
+}
+
+.course-section ul li {
+  margin-bottom: 0.9rem;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+/* Paragraphs */
+.course-section p {
+  font-size: 1.rem;
+  color: #fff;
+  margin-bottom: 1em;
+}
+
+/* Testimonials styling */
+.testimonials blockquote {
+  border-left: 3px solid #30FFF4;
+  padding-left: 1.2rem;
+  font-style: italic;
+  color: #cdefff;
+  font-size: 1.05rem;
+}
+
+.testimonials blockquote p {
+  margin-bottom: 0.6rem;
+}
+
+/* Next Steps styling */
+.next-steps ul li {
+  font-weight: 600;
+  font-size: 1.12rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 600px) {
+  .course-details {
+    padding: 0 1rem;
+    max-width: 95vw;
+  }
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .course-section ul li,
+  .course-section p,
+  .next-steps ul li {
+    font-size: 1rem;
+  }
+  .testimonials blockquote {
+    font-size: 0.95rem;
+  }
+}
+.btn-cta {
+  display: inline-block;
+  background-color: #30FFF4;       /* neon cyan background */
+  color: #101a20;                  /* dark text for contrast */
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 530;
+  text-decoration: none;
+  box-shadow: 0 0 12px #30FFF4bb, 0 0 24px #1defff88;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.btn-cta:hover,
+.btn-cta:focus {
+  background-color: #1defff;
+  box-shadow: 0 0 20px #1defffdd, 0 0 36px #30FFF4dd;
+  outline: none;
+}
+.course-price-details p {
+  color: #fff;
+  
+  font-size: 1.25rem;
+  margin-bottom: 1.37rem;
+}
+.course-price-details strong {
+  color: #30FFF4;
+  text-shadow: 0 0 6px #30FFF4bb;
+}
+.course-price {
+  color: #30FFF4;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  text-shadow: 0 0 6px #30FFF4bb;
+}

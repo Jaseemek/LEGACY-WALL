@@ -1,0 +1,658 @@
+/* ---------------- Basic Global Styles ---------------- */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #101a20;     /* Deep dark teal background */
+  color: #EAFDFD;          /* Soft white-teal text */
+  overflow-x: hidden;
+}
+
+/* Neon Aura Background Glow */
+body::before {
+  content: "";
+  position: fixed;
+  top: -30vh;
+  left: -20vw;
+  width: 140vw;
+  height: 140vh;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 105% 60%, #30FFF4cc 0%, #101a20 55%, transparent 100%);
+  opacity: 0.45;
+  filter: blur(26px);
+  animation: neonAura 9s ease-in-out infinite alternate;
+}
+@keyframes neonAura {
+  0% { opacity: 0.45; filter: blur(18px); }
+  100% { opacity: 0.45; filter: blur(34px);}
+}
+
+/* ---------------- Section Backgrounds ---------------- */
+.hero,
+.contact,
+.connect,
+.demo,
+.footer,
+.welcome-silent-equity,
+.join-movement-section,
+.team-anonymity-section,
+.journey-section {
+  background: #101a20;    /* Unified dark teal background */
+  /* Reduced vertical padding */
+  padding: 40px 20px;
+}
+
+/* ---------------- Header & Navigation ---------------- */
+.header {
+  background: #101a20;    /* Match background with hero for unified look */
+  padding: 1rem 2rem;
+}
+.nav-container {
+  background: transparent;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.top-nav {
+  background: transparent;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  margin: 1rem 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+.top-nav a {
+  text-decoration: none;
+  color: #30FFF4;          /* Neon teal */
+  font-weight: 600;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+.top-nav a:hover {
+  color: #1de9ff;          /* Lighter neon teal on hover */
+}
+nav.top-nav a {
+  color: #EAFDFD;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+nav.top-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #30FFF4;
+  transition: width 0.3s ease;
+}
+nav.top-nav a:hover {
+  color: #30FFF4;
+}
+nav.top-nav a:hover::after {
+  width: 100%;
+}
+
+/* ---------------- Footer ---------------- */
+.footer {
+  background: #101a20;
+  text-align: center;
+  color: #888;
+  font-size: 0.875rem;
+  padding: 1rem 0;
+}
+
+/* ---------------- Market Ticker ---------------- */
+.market-ticker {
+  background: #101a20;      /* Match background */
+  color: #30FFF4;           /* Neon teal text */
+  padding: 10px 20px;
+  overflow: hidden;
+}
+.scrolling-text {
+  white-space: nowrap;
+  animation: scrollTicker 20s linear infinite;
+  color: #30FFF4;
+  text-shadow: 
+   
+ 
+  letter-spacing: 0.5px;
+}
+@keyframes scrollTicker {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ---------------- Animations ---------------- */
+.ninja-emoji {
+  cursor: pointer;
+  width: 190px;
+  height: 190px;
+  pointer-events: auto;
+  user-select: none;
+  display: inline-block; /* important for transforms on images */
+  animation: floatNinja 3s ease-in-out infinite, glow 2s ease-in-out infinite;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.ninja-emoji:hover,
+.ninja-emoji:focus {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 12px #30FFF4) drop-shadow(0 0 24px #1de9ff);
+  outline: none;
+}
+.glowing-title {
+  color: #30fff4;
+  animation: glowTitle 3s infinite alternate;
+  text-shadow: 0 0 6px #30fff4bb, 0 0 12px #1defff88;
+}
+
+@keyframes glowTitle {
+  from { text-shadow: 0 0 1px #30fff4bb; }
+  to { text-shadow: 0 0 8px #30fff4bb; }
+}
+
+/* Retain your keyframes for floating and glow */
+@keyframes floatNinja {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 8px #30FFF4; }
+  50% { text-shadow: 0 0 25px #30FFF4, 0 0 40px #1de9ff; }
+}
+
+
+/* ---------------- Contact Section Light Trail & Slide-in Animation ---------------- */
+.contact-slide-wrapper {
+  position: relative;
+  overflow: visible;
+  min-height: 380px;
+}
+
+.contact-form-content {
+  opacity: 0;
+  transform: translateX(-120vw);
+  transition:
+    opacity 0.3s cubic-bezier(.42,1,.39,1),
+    transform 0.5s cubic-bezier(.77,-.07,.31,1.18);
+  position: relative;
+  z-index: 2;
+}
+
+/* Light Trail */
+.light-trail {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 98%;
+  height: 120px;
+  background: linear-gradient(90deg, rgba(48,255,244,0) 0%, rgba(48,255,244,0.3) 40%, rgba(48,255,244,0) 100%);
+  opacity: 0;
+  filter: blur(16px);
+  pointer-events: none;
+  z-index: 1;
+  transform: translateX(-50vw) scaleX(0.7) skewX(-11deg);
+  transition:
+    opacity 0.24s,
+    transform 0.48s cubic-bezier(.53,-0.11,.23,1.34);
+}
+.contact-slide-wrapper.slide-in .contact-form-content {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.08s;
+}
+.contact-slide-wrapper.slide-in .light-trail {
+  opacity: 1;
+  transform: translateX(-10vw) scaleX(1.2) skewX(-11deg);
+  transition-delay: 0.11s;
+  animation: lightTrailVanish 0.65s 0.22s forwards;
+}
+@keyframes lightTrailVanish {
+  to {
+    opacity: 0;
+    transform: translateX(60vw) scaleX(1.8) skewX(-20deg);
+  }
+}
+
+/* ---------------- Form Inputs ---------------- */
+.contact {
+  background: #101a20;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.form-input {
+  padding: 12px 16px;
+  border-radius: 0.5rem;
+  background-color: #16232F;
+  color: #EAFDFD;
+  border: 1.5px solid #179191;
+  width: 100%;
+  box-sizing: border-box;
+}
+.form-input:focus {
+  outline: none;
+  border: 2px solid #30FFF4;
+  box-shadow: 0 0 8px #30FFF4, 0 0 16px #1de9ff;
+  transition: all 0.3s ease;
+}
+textarea.form-input {
+  resize: vertical;
+  width: 100%;
+}
+
+/* ---------------- Social Icons ---------------- */
+.social-icon {
+  color: #EAFDFD;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+.social-icon:hover {
+  transform: scale(1.2);
+  color: #ccc;
+}
+
+/* ---------------- Blinking Cursor ---------------- */
+.blinking-cursor {
+  font-weight: 600;
+  color: #EAFDFD;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ---------------- Warning Modal Styles ---------------- */
+.entry-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(20,22,24,0.96);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.entry-modal-box {
+  background: #181818;
+  color: #EAFDFD;
+  border-radius: 14px;
+  max-width: 300px;
+  width: 90vw;
+  text-align: center;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+  padding: 22px 14px 18px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1.5px solid #EAFDFD;
+  animation: popupBounce 0.6s cubic-bezier(.42,1,.68,1);
+}
+.entry-modal-box h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #EAFDFD;
+  font-size: 1.13rem;
+  letter-spacing: 0.01em;
+}
+.warning-message {
+  font-size: 0.99rem;
+  color: #EAFDFD;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+.modal-close-btn {
+  margin-top: 0.2em;
+  border: 2px solid #EAFDFD;
+  border-radius: 999px;
+  padding: 8px 24px;
+  background: transparent;
+  color: #EAFDFD;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: .015em;
+  cursor: pointer;
+  transition: background .18s, color .16s;
+}
+.modal-close-btn:hover {
+  background: #EAFDFD;
+  color: #181818;
+}
+
+/* ---------------- Floating (hovering) animation ---------------- */
+@keyframes floatingUpDown {
+  0% { transform: translateY(0); }
+  45%, 55% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* ---------------- Neon Accent Text ---------------- */
+.neon-accent {
+  color: #30FFF4;
+  font-weight: 800;
+  letter-spacing: inherit;
+}
+
+/* ---------------- Section Headings ---------------- */
+.welcome-heading,
+.join-heading,
+.ninja-label,
+.journey-heading {
+  font-size: 2.7rem;
+  font-weight: 800;
+  color: #EAFDFD;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  margin: 0;
+}
+.welcome-heading .neon-accent,
+.join-heading .neon-accent,
+.ninja-label .neon-accent,
+.journey-heading .neon-accent {
+  color: #30FFF4;
+}
+
+/* ---------------- Section Containers ---------------- */
+.welcome-silent-equity,
+.join-movement-section,
+.team-anonymity-section,
+.journey-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  /* Reduced padding vertically */
+  padding: 30px 20px;
+  gap: 12px;
+  /* Reduced max width */
+  max-width: 700px;
+  margin: 60px auto 0 auto;
+  background: #101a20;
+  /* Reduced min height */
+  min-height: 70vh;
+  border-radius: 20px;
+  transition: opacity 0.9s, transform 0.7s;
+  animation: floatingUpDown 3.4s ease-in-out infinite;
+  box-sizing: border-box;
+}
+
+/* Left and Right parts inside each section */
+.welcome-left,
+.join-left,
+.team-left,
+.journey-left {
+  /* Reduced flex-basis */
+  flex: 1 1 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Reduced padding */
+  padding: 16px 10px 16px 16px;
+  box-sizing: border-box;
+}
+
+.welcome-right,
+.join-right,
+.team-right,
+.journey-right {
+  /* Reduced flex-basis */
+  flex: 2 1 350px;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  box-sizing: border-box;
+}
+
+/* Headings of the sections - reduced font size */
+.welcome-heading,
+.join-heading,
+.ninja-label,
+.journey-heading {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #EAFDFD;
+  letter-spacing: -1.3px;
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* Neon accent color on specific words */
+.welcome-heading .neon-accent,
+.join-heading .neon-accent,
+.ninja-label .neon-accent,
+.journey-heading .neon-accent {
+  color: #30FFF4;
+}
+
+/* Content boxes inside each—about-desc, join-desc, etc. */
+.about-desc,
+.join-desc,
+.team-desc,
+.journey-desc {
+  background: linear-gradient(90deg, #13232f 60%, #101a20 100%);
+  border-radius: 16px;
+  color: #EAFDFD;
+  box-shadow: 0 6px 28px rgba(23,145,145, 0.18);
+  /* Reduced padding */
+  padding: 16px 18px 14px 18px;
+  font-size: 0.9rem;
+  max-width: 100%;
+  margin: 0 auto;
+  border: 1.5px solid #30FFF4;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+/* Paragraph spacing */
+.about-desc p,
+.join-desc p,
+.team-desc p,
+.journey-desc p {
+  margin: 0 0 1em 0;
+}
+
+/* ---------------- Responsive Adjustments ---------------- */
+@media (max-width: 880px) {
+  .welcome-silent-equity,
+  .join-movement-section,
+  .team-anonymity-section,
+  .journey-section {
+    flex-direction: column;
+    padding: 20px 14px;
+    gap: 16px;
+    margin-top: 40px;
+    max-width: 95vw;
+  }
+  
+  .welcome-left,
+  .join-left,
+  .team-left,
+  .journey-left,
+  .welcome-right,
+  .join-right,
+  .team-right,
+  .journey-right {
+    flex-basis: auto;
+    width: 100%;
+    padding: 12px 8px;
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+  
+  /* Smaller font sizes for headings */
+  .welcome-heading,
+  .join-heading,
+  .ninja-label,
+  .journey-heading {
+    font-size: 1.3rem;
+    margin-bottom: 0.3em;
+  }
+  
+  /* Content boxes adjust */
+  .about-desc,
+  .join-desc,
+  .team-desc,
+  .journey-desc {
+    padding: 12px 14px 10px 14px;
+    font-size: 0.85rem;
+    border-radius: 14px;
+  }
+}
+
+/* On smaller mobiles */
+@media (max-width: 500px) {
+  .welcome-silent-equity,
+  .join-movement-section,
+  .team-anonymity-section,
+  .journey-section {
+    padding: 16px 12px;
+    gap: 12px;
+  }
+  
+  .welcome-left,
+  .join-left,
+  .team-left,
+  .journey-left,
+  .welcome-right,
+  .join-right,
+  .team-right,
+  .journey-right {
+    padding: 8px 6px;
+  }
+  
+  .welcome-heading,
+  .join-heading,
+  .ninja-label,
+  .journey-heading {
+    font-size: 1.1rem;
+    margin-bottom: 0.2em;
+  }
+  
+  .about-desc,
+  .join-desc,
+  .team-desc,
+  .journey-desc {
+    padding: 10px 12px 10px 12px;
+    font-size: 0.8rem;
+    border-radius: 12px;
+  }
+}
+
+/* ---------------- Floating animation remains unchanged ---------------- */
+@keyframes floatingUpDown {
+  0% { transform: translateY(0); }
+  45%, 55% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+@keyframes floatingUpDownSmall {
+  0% { transform: translateY(0); }
+  45%, 55% { transform: translateY(-5px); } /* Reduced movement */
+  100% { transform: translateY(0); }
+}
+
+/* Optional: smooth rounded corners for nav links on mobile */
+@media (max-width: 500px) {
+  nav.top-nav a {
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+  }
+}
+
+/* Scroll snap container and sections (keep smooth scrolling) */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  height: 100%;
+  overflow-y: auto;
+}
+
+body {
+  height: 100%;
+}
+
+.snap-container {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.snap-container > section {
+  scroll-snap-align: start;
+  height: 70vh; /* match min-height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0 2rem;
+}
+html {
+  scroll-padding-top: 80px;   /* add top padding if your nav is fixed */
+  scroll-padding-bottom: 25vh; /* gives extra space at bottom */
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+.snap-container {
+  -webkit-overflow-scrolling: touch;  /* enables momentum scrolling on iOS */
+}
+.contact {
+  margin-top: 160px;  /* Increase this value to push it further down (try 160px, 200px, etc.) */
+  background: #101a20;
+  padding: 80px 20px;
+  text-align: center;
+}
+.hero,
+.welcome-silent-equity,
+.join-movement-section,
+.team-anonymity-section,
+.journey-section,
+.contact {
+  min-height: 70vh;      /* or your chosen height */
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  box-sizing: border-box;
+
+  /* ---- Smooth entrance transition ---- */
+  transition: opacity 0.55s cubic-bezier(0.55,0,0.3,1), transform 0.55s cubic-bezier(0.55,0,0.3,1);
+}
+html, body {
+  -webkit-overflow-scrolling: touch;
+}
+/* Default state: no glow */
+.btn-white.btn-hover.review-btn {
+  background-color: transparent;  /* or your normal bg */
+  color: #fff;                  /* soft text */
+  box-shadow: none;
+  transition: box-shadow 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* Hover state: neon glow & scale */
+.btn-white.btn-hover.review-btn:hover,
+.btn-white.btn-hover.review-btn:focus {
+  box-shadow: 0 0 20px #30FFF4, 0 0 40px #1de9ff;
+  background-color: #101a20;
+  color: #fff;
+  transform: scale(1.05);
+  outline: none;
+  cursor: pointer;
+}
+.ninja-emoji {
+  pointer-events: auto;
+  cursor: pointer;
+  user-select: none;
+}

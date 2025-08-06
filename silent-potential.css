@@ -364,3 +364,12 @@ nav.back-home-nav .back-home {
   color: #1de9ff;
   text-shadow: 0 0 12px #30FFF4dd, 0 0 24px #1defffcc;
 }
+nav.top-nav.back-home-nav {
+  justify-content: flex-start !important;
+  padding-left: 2rem;
+  width: 100%;
+}
+
+.back-home {
+  margin-left: 0 !important;
+}
